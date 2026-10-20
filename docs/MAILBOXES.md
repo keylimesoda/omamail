@@ -2,7 +2,9 @@
 
 Open Settings and choose Add mailbox, then select your provider.
 
-**Gmail** signs in with Google directly. Google issues Gmail API access per
+**Gmail** also has an optional [terminal setup through Ortie](GMAIL-ORTIE.md), which uses a public OAuth client to avoid creating a Google Cloud project. It retains Omamail's native Gmail provider; read the public-client dependency and broader-permission tradeoffs before choosing it.
+
+The built-in Gmail setup signs in with Google directly. Google issues Gmail API access per
 project, so this route needs an OAuth client you create once — the setup page
 walks through it. In exchange it gets labels, conversations, Gmail's own search
 syntax, and a "report spam" that Google actually learns from.

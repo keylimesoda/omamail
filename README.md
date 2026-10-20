@@ -65,6 +65,8 @@ make app-run
 
 Choose a provider in Settings. Gmail needs a Google OAuth client; Outlook and Microsoft 365 need a Microsoft app registration. HEY uses the official [HEY CLI](https://github.com/basecamp/hey-cli). JMAP and IMAP usually use an app password or API token.
 
+For a terminal Gmail setup that avoids creating your own Cloud project, see [Gmail through Ortie](docs/GMAIL-ORTIE.md). It imports an Ortie grant into the native Gmail provider, with a documented public-client dependency and broader permissions; normal Google browser consent is still required.
+
 See [mailbox setup](docs/MAILBOXES.md) for provider instructions and limitations, including Microsoft 365 and Proton Mail Bridge.
 
 ## Make Omamail the default mail client

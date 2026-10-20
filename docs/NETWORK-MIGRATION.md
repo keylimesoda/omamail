@@ -41,6 +41,13 @@ These are accounted for, not hidden as migrated HTTP:
   Google's `gcloud` owns its signed-in Cloud account and project/API provisioning;
   the remaining OAuth app setup opens the Cloud Console. This is not ongoing
   mailbox transport. Ordinary Google authentication still belongs in Rust.
+* `scripts/gmail-ortie.py` is an optional, one-time credential bootstrap from an
+  Ortie-owned Google grant. It validates that grant against fixed Google token,
+  Gmail profile and Calendar-list endpoints, then hands the refresh token to
+  Rust's native credential store. Its bounded Python HTTPS requests run only
+  during explicit setup; ongoing Gmail/calendar transport and token refresh
+  remain in Rust. See `docs/GMAIL-ORTIE.md` for the public-client dependency,
+  permissions, private storage and validation limits.
 * HEY's official CLI owns HEY OAuth and its network protocol because the project
   explicitly prohibits use of HEY private endpoints. Rust must own and supervise
   every invocation; QML must not keep an alternate transport.
